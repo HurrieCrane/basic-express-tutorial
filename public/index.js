@@ -1,7 +1,7 @@
 function AddToBasket(id) {
     fetch(`/basket?id=${id}`)
-    .then((response) => {
-        const res = JSON.parse(response);
-        console.log(`Basket count is ${res.Count}`);
+    .then(response => response.json())
+    .then((data) => {
+        console.log(`Basket count is ${data.Count}`);
     })
 }
